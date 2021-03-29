@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:poc_theme/app_theme.dart';
-import 'package:poc_theme/theme.dart';
+import 'package:poc_theme/theme_widgets.dart';
 
 void main() {
   runApp(MyApp());
@@ -65,7 +65,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return MThemeWrapper(
+    return ThemeWrapper(
       theme: AppTheme(context),
       builder: (context) => Scaffold(
         backgroundColor: MTheme.of(context).backgroundColor,
@@ -89,7 +89,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 'Body1 Medium Emphasis',
                 style: MTheme.of(context).body1MediumEmphasis,
               ),
-              MThemeWrapper(
+              Text(
+                'Body2 High Emphasis',
+                style: MTheme.of(context).body2,
+              ),
+              Text(
+                'Body2 Medium Emphasis',
+                style: MTheme.of(context).body2MediumEmphasis,
+              ),
+              ThemeWrapper(
                 theme: Theme2(context),
                 builder: (context) => Padding(
                   padding: const EdgeInsets.symmetric(vertical: 24),

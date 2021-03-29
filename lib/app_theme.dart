@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:poc_theme/colors.dart';
-import 'package:poc_theme/theme.dart';
+import 'package:poc_theme/theme_widgets.dart';
 import 'package:poc_theme/typography.dart';
 
 class AppTheme {

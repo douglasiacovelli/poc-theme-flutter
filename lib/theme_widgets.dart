@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:poc_theme/app_theme.dart';
 
-class MThemeWrapper extends StatelessWidget {
+class ThemeWrapper extends StatelessWidget {
   final AppTheme theme;
   final WidgetBuilder builder;
 
-  MThemeWrapper({
+  ThemeWrapper({
     @required this.theme,
     @required this.builder,
   });
@@ -23,7 +23,10 @@ class MThemeWrapper extends StatelessWidget {
 class MTheme extends InheritedWidget {
   final AppTheme theme;
 
-  MTheme({this.theme, Widget child}) : super(child: child);
+  MTheme({
+    this.theme,
+    Widget child,
+  }) : super(child: child);
 
   @override
   bool updateShouldNotify(covariant InheritedWidget oldWidget) {
