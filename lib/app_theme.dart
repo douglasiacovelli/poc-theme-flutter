@@ -13,10 +13,12 @@ class AppTheme {
   Color get backgroundColor => darkMode ? Colors.black : Colors.white;
   Color get highEmphasisColor => darkMode ? Colors.white : Colors.black;
   Color get mediumEmphasisColor => darkMode ? Colors.white80 : Colors.black60;
+  Color get toolbarBackgroundColor => Colors.blue;
   TextStyle get body1 => Typography.body1.copyWith(color: highEmphasisColor);
   TextStyle get body1MediumEmphasis => Typography.body1.copyWith(color: mediumEmphasisColor);
   TextStyle get body2 => Typography.body2.copyWith(color: highEmphasisColor);
   TextStyle get body2MediumEmphasis => Typography.body2.copyWith(color: mediumEmphasisColor);
+  TextStyle get toolbarTextStyle => Typography.body1.copyWith(color: Colors.white);
 }
 
 class Theme2 extends AppTheme {

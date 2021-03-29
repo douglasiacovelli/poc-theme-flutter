@@ -70,10 +70,10 @@ class _MyHomePageState extends State<MyHomePage> {
       builder: (context) => Scaffold(
         backgroundColor: MTheme.of(context).backgroundColor,
         appBar: AppBar(
-          backgroundColor: MTheme.of(context).backgroundColor,
+          backgroundColor: MTheme.of(context).toolbarBackgroundColor,
           title: Text(
             widget.title,
-            style: MTheme.of(context).body1,
+            style: MTheme.of(context).toolbarTextStyle,
           ),
         ),
         body: Center(

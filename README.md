@@ -1,16 +1,12 @@
-# poc_theme
+# POC - Flutter custom theme
 
-A new Flutter project.
+The main goal was to create a custom theme with support to dark/light mode.
 
-## Getting Started
+## How it was done
 
-This project is a starting point for a Flutter application.
+It was created using [Inherited Widgets](https://api.flutter.dev/flutter/widgets/InheritedWidget-class.html).  
+- The `GlobalAppTheme` is an Inherited Widget that stores the dark mode.
+- The `MTheme` is another Inherited Widget that holds the theme itself. There can be multiple levels of nested theming.
+- The `MThemeWrapper` is simply a widget helper that will receive both the theme and a builder. This is useful because, otherwise, it'd be necessary to add both the `MTheme` and then the `LayoutBuilder` to get the right context. For more info on that check [this page](https://api.flutter.dev/flutter/widgets/BuildContext-class.html).
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
