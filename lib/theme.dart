@@ -1,59 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:poc_theme/theme_data.dart';
+import 'package:poc_theme/app_theme.dart';
 
 class MThemeWrapper extends StatelessWidget {
-  final MThemeData themeData;
+  final AppTheme theme;
   final WidgetBuilder builder;
 
-  MThemeWrapper({@required this.themeData, @required this.builder});
+  MThemeWrapper({
+    @required this.theme,
+    @required this.builder,
+  });
 
   @override
   Widget build(BuildContext context) {
     return MTheme(
-      themeData: themeData,
+      theme: theme,
       child: LayoutBuilder(builder: (context, _) => builder(context)),
     );
   }
 }
 
 class MTheme extends InheritedWidget {
-  final MThemeData themeData;
+  final AppTheme theme;
 
-  MTheme({this.themeData, Widget child}) : super(child: child);
+  MTheme({this.theme, Widget child}) : super(child: child);
 
   @override
   bool updateShouldNotify(covariant InheritedWidget oldWidget) {
     return true;
   }
 
-  static MThemeData of(BuildContext context) =>
-      context.dependOnInheritedWidgetOfExactType<MTheme>(aspect: MTheme).themeData;
+  static AppTheme of(BuildContext context) =>
+      context.dependOnInheritedWidgetOfExactType<MTheme>(aspect: MTheme).theme;
 }
 
-class MThemeData implements AppTheme {
-  AppTheme _currentTheme;
+class GlobalAppTheme extends InheritedWidget {
+  final darkMode;
 
-  MThemeData({bool darkMode = false}) {
-    setTheme(darkMode);
+  GlobalAppTheme({
+    @required this.darkMode,
+    @required Widget child,
+  }) : super(child: child);
+
+  @override
+  bool updateShouldNotify(covariant InheritedWidget oldWidget) {
+    return true;
   }
 
-  void setTheme(bool darkMode) {
-    _currentTheme = darkMode ? DarkTheme() : LightTheme();
-  }
-
-  @override
-  Color get backgroundColor => _currentTheme.backgroundColor;
-
-  @override
-  Color get highEmphasisTextColor => _currentTheme.highEmphasisTextColor;
-
-  @override
-  Color get mediumEmphasisTextColor => _currentTheme.mediumEmphasisTextColor;
-
-  @override
-  TextStyle get body1 => _currentTheme.body1;
-
-  @override
-  TextStyle get body1MediumEmphasis => _currentTheme.body1MediumEmphasis;
+  static GlobalAppTheme of(BuildContext context) =>
+      context.dependOnInheritedWidgetOfExactType(aspect: GlobalAppTheme);
 }
