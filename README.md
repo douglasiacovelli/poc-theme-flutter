@@ -12,4 +12,4 @@ It was created using [Inherited Widgets](https://api.flutter.dev/flutter/widgets
 ## Screenshots
 Light mode | Dark mode
 --- | ---
-<img width="100%" alt="Screen Shot 2021-03-29 at 00 09 05" src="https://user-images.githubusercontent.com/1608564/112782278-04941200-9023-11eb-81ef-7701f13016b8.png"> | <img width="100%" alt="Screen Shot 2021-03-29 at 00 09 30" src="https://user-images.githubusercontent.com/1608564/112782294-0fe73d80-9023-11eb-82df-a1548a179135.png">
+<img width="100%" src="https://user-images.githubusercontent.com/1608564/112833864-b1937c80-906d-11eb-8b8a-18da0676e59e.png"> | <img width="100%"  src="https://user-images.githubusercontent.com/1608564/112833875-b35d4000-906d-11eb-8511-a1b243b726e0.png">
